@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Info</title>
+    {% load staticfiles %}
+  </head>
+  <body>
+    <a href="/logout">Logout</a><br>
+    <a href="/quotes">Dashboard</a><br>
+    <h3>Posts by:  {{request.session.first_name}}</h3>
+    <h3>Count: {{request.session.count}}</h3>
+    {% for quote in quotes %}
+    <h4>{{quote.author}}:</h4>
+    <p>{{quote.quote}}</p>
+
+    {% endfor %}
+    <!--persons name. grab the user id and show what quotes they liked -->
+    <!-- show quotes that the person added to their list -->
+  </body>
+</html>
